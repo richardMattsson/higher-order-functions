@@ -17,4 +17,19 @@ function forEach(a, f) {
     f(a[i]);
   }
 }
-forEach([1, 2, 3], alert);
+// forEach([1, 2, 3], alert);
+
+function find(a, f) {
+  for (let i = 0; i < a.length; i++) {
+    if (f(a[i]) === true) {
+      return a[i];
+    }
+  }
+}
+console.log(
+  find([1, 2, 3], function (n) {
+    return n > 2;
+  })
+);
+
+console.log(find(["Hej", "Hejdå"], (s) => s.length === 5));
